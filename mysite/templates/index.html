@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Title</title>
-  </head>
-  <body>
-    <div>
-      <div style="border: 1px darkblue solid">{{ my_num }}</div>
-      <div style="border: 1px darkseagreen solid">{{ my_str }}</div>
-      <div style="border: 1px fuchsia solid">{{ my_set }}</div>
-      <div style="border: 1px firebrick solid">{{ my_dict.some_key }}</div>
-
-      <div style="border: 1px cyan solid">{{ my_class.string }}</div>
-      <div style="border: 1px cyan solid">{{ my_list.0 }}</div>
-      <div style="border: 1px burlywood solid">{{ my_tuple.1 }}</div>
-    </div>
-  </body>
-</html>
+{% extends 'base.html' %} {% block content%}
+<div style="padding: 20px; background-color: fuchsia">
+  Extended template index!
+</div>
+<a href="{% url 'first' %}">To the first page</a>
+{% endblock %}

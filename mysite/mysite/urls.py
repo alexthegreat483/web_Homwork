@@ -25,9 +25,11 @@ from django.urls import path, include, re_path
 from blogapp.views import index, another, regex
 
 urlpatterns = [
-    path('', index),
-    path('some_url/', another),
+    path('', index, name='index'),
+    path('some_url/', another, name='another'),
     path('article/', include('blogapp.urls')),
     re_path(r'^(?P<text>\d{3}[a-zA-Z]{2,}$)', regex),
+    path('first/', include('blogapp.urls')),  # Ensure 'first' is routed correctly
+
 
 ]

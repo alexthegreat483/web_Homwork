@@ -16,6 +16,7 @@ class MyClass:
         self.string = s
 
 
+
 def index(request):
     my_num = 33
     my_str = 'some string'
@@ -24,6 +25,7 @@ def index(request):
     my_set = {'set_first_item', 'set_second_item', 'set_third_item'}
     my_tuple = ('tuple_first_item', 'tuple_second_item', 'tuple_third_item')
     my_class = MyClass('class string')
+    some_list = ('1', '2', '3')
     return render(request, 'index.html', {
         'my_num': my_num,
         'my_str': my_str,
@@ -32,8 +34,16 @@ def index(request):
         'my_set': my_set,
         'my_tuple': my_tuple,
         'my_class': my_class,
+        'some_list': some_list,
+        'my_range': range(5),
+        'display_num': True
     })
 
+def first(request):
+    return render(request, 'first.html')
+
+# def index(request):
+#     return render(request, 'index.html')
 
 def another(request: HttpRequest) -> HttpResponse:
     return HttpResponse("It's another page!!")

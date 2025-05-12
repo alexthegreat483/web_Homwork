@@ -42,8 +42,11 @@ def index(request):
 def first(request):
     return render(request, 'first.html')
 
-# def index(request):
-#     return render(request, 'index.html')
+def add(request):
+    return render(request, 'add.html')
+
+def index(request):
+    return render(request, 'index.html')
 
 def another(request: HttpRequest) -> HttpResponse:
     return HttpResponse("It's another page!!")

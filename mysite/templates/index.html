@@ -1,9 +1,9 @@
-{% extends 'base.html' %} 
-{% block content %} 
-{% include 'add.html' with name='Vlad' %}
+{% extends 'base.html' %}
 
-<div style="padding: 20px; background-color: fuchsia">
-  Extended template index!
-</div>
-<a href="{% url 'first' %}">To the first page</a>
+{% block content %}
+<div>{{ now| date:"SHORT_DATE_FORMAT" }}</div>
+<div>{{ now|date:"D d M Y" }} {{ value|time:"H:i" }}</div>
+<div>{{ not_exist|default:"nothing" }}</div>
+<div>{{ my_str | capfirst }}</div>
+<div>{{ my_list | join:"**" }}</div>
 {% endblock %}

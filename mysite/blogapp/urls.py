@@ -1,7 +1,9 @@
 from django.urls import path
+# from django.contrib import admin
 from .views import main_article, uniq_article, article, first  # Import the 'first' view
 
 urlpatterns = [
+    # path('admin/', admin.site.urls),
     path('', main_article, name='main_article'),
     path('33/', uniq_article, name='unique_article'),
     path('<int:article_id>/', article, name='article'),

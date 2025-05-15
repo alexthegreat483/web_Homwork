@@ -22,9 +22,11 @@ Including another URLconf
 
 # mysite/mysite/urls.py
 from django.urls import path, include, re_path
+from django.contrib import admin
 from blogapp.views import index, another, regex
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('some_url/', another, name='another'),
     path('article/', include('blogapp.urls')),
